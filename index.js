@@ -12,6 +12,10 @@ app.use(bodyparser.json());
 // Conexión a Base de datos
 
 // import routes
+const authRoutes = require('./routes/auth');
+
+// route middlewares
+app.use('/api/user', authRoutes);
 
 // route middlewares
 app.get('/', (req, res) => {
