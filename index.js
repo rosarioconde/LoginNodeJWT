@@ -10,6 +10,12 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 // Conexión a Base de datos
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster1.xt6t5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+mongoose.connect(uri,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
+.then(() => console.log('BD conectada'))
+.catch(e => console.log('error db:', e))
 
 // import routes
 const authRoutes = require('./routes/auth');
