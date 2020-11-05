@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
     res.json({
         error: null,
         data: 'bienvenido',
-        token:token
+        token: token
     })
 })
 

@@ -19,11 +19,12 @@ mongoose.connect(uri, option)
 
 // import routes
 const authRoutes = require('./routes/auth');
+const verifyToken = require('./routes/validate-token');
+const dashboadRoutes = require('./routes/dashboard');
 
 // route middlewares
 app.use('/api/user', authRoutes);
-
-// route middlewares
+app.use('/api/dashboard', verifyToken, dashboadRoutes);
 app.get('/', (req, res) => {
     res.json({
         estado: true,
