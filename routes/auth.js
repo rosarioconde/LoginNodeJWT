@@ -35,11 +35,6 @@ router.post('/login', async (req, res) => {
         data: { token }
     })
 
-    res.json({
-        error: null,
-        data: 'bienvenido',
-       
-    })
 })
 
 router.post('/register', async (req, res) => {
